@@ -1,0 +1,9 @@
+#application.html.erb:
+
+<a class="navbar-brand" href="#">
+          <img src="vrfored/app/assets/images/logovr.png" width="30" height="30" class="d-inline-block align-top" alt="">VR Fored
+</a>
+
+#Not being able to change font color in the top nav
+
+ 
