@@ -1,0 +1,9 @@
+<% @lessons.each do |lesson| %>
+  <div>
+    <h1><%= lesson.name %></h1>
+    <i><%= lesson.description %></i><br />
+    <p><%= lesson.where %></p><br />
+
+  </div>
+  <hr />
+<% end %>
