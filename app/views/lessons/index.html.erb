@@ -1,9 +1,19 @@
-<% @lessons.each do |lesson| %>
-  <div>
-    <h1><%= lesson.name %></h1>
-    <i><%= lesson.description %></i><br />
-    <p><%= lesson.where %></p><br />
-
+ <div class="booyah-box col-10 offset-1">
+    <h1>Check the Lessons Posted by our Amazing Community and Use It with your Students!</h1>
   </div>
-  <hr />
-<% end %>
+
+  <div class="booyah-box col-10 offset-1">
+    <% @lessons.each do |lesson| %>
+        <h1><%= lesson.name %></h1>
+        <i><%= lesson.description %></i><br />
+        <p><%= lesson.where %></p><br />
+
+        <% if lesson.user.present? %>
+          <small><%= lesson.user.email %></small>
+        <% end %>
+        
+      <hr />
+      <hr />
+      <hr />  
+    <% end %>
+  </div>

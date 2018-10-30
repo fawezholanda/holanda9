@@ -1,0 +1,9 @@
+<div class="booyah-box col-10 offset-1"> 
+  <h1>Enter your Lesson Details</h1>
+    <%= simple_form_for @lesson do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :where %>
+      <%= f.submit 'Create', class: 'btn btn-primary' %>
+    <% end %>
+</div>
