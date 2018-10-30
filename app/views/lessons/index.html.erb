@@ -4,14 +4,14 @@
 
   <div class="booyah-box col-10 offset-1">
     <% @lessons.each do |lesson| %>
-        <h1><%= lesson.name %></h1>
+        <h1><%= link_to lesson.name, lesson_path(lesson) %></h1>
         <i><%= lesson.description %></i><br />
         <p><%= lesson.where %></p><br />
 
         <% if lesson.user.present? %>
           <small><%= lesson.user.email %></small>
         <% end %>
-        
+
       <hr />
       <hr />
       <hr />  
