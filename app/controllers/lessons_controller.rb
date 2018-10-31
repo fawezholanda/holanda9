@@ -11,7 +11,7 @@ class LessonsController < ApplicationController
 
   def create
     current_user.lessons.create(lesson_params)
-    redirect_to root_path
+    redirect_to lessons_path
   end
 
 
@@ -26,9 +26,14 @@ class LessonsController < ApplicationController
   def update
     @lesson = Lesson.find(params[:id])
     @lesson.update_attributes(lesson_params)
-    redirect_to root_path
+    redirect_to lessons_path
   end
 
+  def destroy
+    @lesson = Lesson.find(params[:id])
+    @lesson.destroy
+    redirect_to lessons_path
+  end
 
 
   private 
