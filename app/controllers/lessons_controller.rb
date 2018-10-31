@@ -1,5 +1,5 @@
 class LessonsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @lessons = Lesson.all
@@ -21,16 +21,28 @@ class LessonsController < ApplicationController
 
   def edit
     @lesson = Lesson.find(params[:id])
+
+    if @lesson.user != current_user
+      return render plain: 'Not Allowed', status: :forbidden
+    end
   end
 
   def update
     @lesson = Lesson.find(params[:id])
+    if @lesson.user != current_user
+      return render plain: 'Not Allowed', status: :forbidden
+    end
+
     @lesson.update_attributes(lesson_params)
     redirect_to lessons_path
   end
 
   def destroy
     @lesson = Lesson.find(params[:id])
+    if @lesson.user != current_user
+      return render plain: "Not Allowed", status: :forbidden
+    end
+    
     @lesson.destroy
     redirect_to lessons_path
   end
