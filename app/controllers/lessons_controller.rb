@@ -24,6 +24,7 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
+    @comment = Comment.new
   end
 
   def edit
