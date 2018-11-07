@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :lessons do
     resources :comments, only: :create
   end
+  get 'about', to: 'lessons#about'
+  get 'learnmore', to: 'lessons#learnmore'
 end

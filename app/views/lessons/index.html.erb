@@ -4,7 +4,7 @@
 
   <div class="booyah-box col-10 offset-1">
     <% @lessons.each do |lesson| %>
-        <h1><%= link_to lesson.name, lesson_path(lesson) %></h1>
+        <h3><%= link_to lesson.name, lesson_path(lesson) %></h3>
         <i><%= lesson.description %></i><br />
         <p><%= lesson.where %></p><br />
 

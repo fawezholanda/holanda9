@@ -63,6 +63,11 @@ class LessonsController < ApplicationController
   end
 
 
+  def about
+  end
+
+  def learnmore
+  end
 
   private 
 
